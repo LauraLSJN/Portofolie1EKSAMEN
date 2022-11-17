@@ -30,6 +30,8 @@ public class RoroVessel extends Vessel {
         return truck;
     }
 
+
+
     public void loadingCargo(int cars, int trucks) {
         this.car = cars;
         this.truck = trucks;
