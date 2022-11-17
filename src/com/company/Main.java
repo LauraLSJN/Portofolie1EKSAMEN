@@ -9,6 +9,9 @@ public class Main {
         System.out.println("ContainerVessel:");
         containerVessel c = new containerVessel("DK",10,20);
         c.loadingCargo(4);
+        c.loadingCargo(3);
+        c.loadingCargo(3);
+        System.out.println("Antal containers i ContainerVessel: " + c.getNowContainer());
         c.utilityLevelOfCapacity();
 
 

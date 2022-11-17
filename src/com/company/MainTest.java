@@ -18,6 +18,49 @@ public class MainTest {
         assertEquals(6,tankerCompartments[5]);
     }
 
+    @Test
+    void ContainerVesselEmpty(){
+        containerVessel c = new containerVessel("DK",10,20);
+
+        c.loadingCargo(0);
+        c.utilityLevelOfCapacity();
+        assertEquals(0,c.utilityLevelOfCapacity());
+
+        /*c.loadingCargo(5);
+        c.utilityLevelOfCapacity();
+        assertEquals(50,c.utilityLevelOfCapacity());*/
+
+        /*c.loadingCargo(10);
+        c.utilityLevelOfCapacity();
+        assertEquals(100,c.utilityLevelOfCapacity());*/
+
+
+
+
+
+
+        //containerVessel.utilityLevelOfCapacity();
+        //assertEquals(0,0);
+
+
+    }
+    @Test
+    void containerVesselFifty(){
+        containerVessel c = new containerVessel("DK",10,20);
+        c.loadingCargo(5);
+        c.utilityLevelOfCapacity();
+        assertEquals(50,c.utilityLevelOfCapacity());
+    }
+
+
+
+    @Test
+    void containerVesselMax(){
+        containerVessel c = new containerVessel("DK",10,20);
+        c.loadingCargo(10);
+        c.utilityLevelOfCapacity();
+        assertEquals(100,c.utilityLevelOfCapacity());
+    }
 
     @Test
     void testLoadingCargoCV(){

@@ -7,5 +7,5 @@ public abstract class Vessel {
     int width;
     int procent;
 
-    public abstract void utilityLevelOfCapacity();
+    public abstract int utilityLevelOfCapacity();
 }
