@@ -38,7 +38,7 @@ public class RoroVessel extends Vessel {
         int nowTruck = trucks;
 
         nowTotalAmountCarTruck = (nowCar*carLength) + (nowTruck * truckLength);
-        totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);
+        totalAmountCarTruck = (car*carLength) + (truck * truckLength);
 
 
        //availablecapacity = hvor mange meter der er tilbage på rorovessel efter bilers og trucks længder.

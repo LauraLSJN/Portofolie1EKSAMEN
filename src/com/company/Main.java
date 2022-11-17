@@ -42,6 +42,9 @@ public class Main {
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
+        r.loadingCargo(1,1);
+        r.loadingCargo(1,1);
+       // r.loadingCargo(0,0);
         //r.loadingCargo(3,3);
 
         //r.loadingCargo(2,2);
