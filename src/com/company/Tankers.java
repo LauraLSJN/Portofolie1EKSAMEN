@@ -67,7 +67,7 @@ public class Tankers extends Vessel {
                 procent = count * 100 / compartments.length;
             }
         }
-        System.out.println("Andelen af tomme copartments: " + procent + "%");
+        System.out.println("Andel af tomme copartments: " + procent + "%");
         return procent;
     }
 }

@@ -40,7 +40,8 @@ public class RoroVessel extends Vessel {
         int nowTruck = trucks;
 
         nowTotalAmountCarTruck = (nowCar*carLength) + (nowTruck * truckLength);
-        totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);  
+        totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);
+
 
        //availablecapacity = hvor mange meter der er tilbage på rorovessel efter bilers og trucks længder.
         int availableCapacity =  totalAmountLaneMeters - totalAmountCarTruck;
@@ -57,12 +58,29 @@ public class RoroVessel extends Vessel {
 
 
         if((totalAmountCarTruck < totalAmountLaneMeters) && (nowTotalAmountCarTruck < totalAmountLaneMeters)){ // hvis der er mere plads efter trucks og cars er sat
+        //nowTotalAmountCarTruck
+        int nowAvailableCapacity = availableCapacity- nowTotalAmountCarTruck;
 
-            if(totalAmountCarTruck < availableCapacity){ // hvis trucks og bilers længde er mindre end eller lig med at der er mere plads
+            if((totalAmountCarTruck <= availableCapacity) && (totalAmountCarTruck <= nowAvailableCapacity)){ // hvis trucks og bilers længde er mindre end eller lig med at der er mere plads
                   this.car += nowCar;
                   this.truck += nowTruck;
                 System.out.println("Nuværende antal af Cars: " + this.car + ", antal af Trucks: " + this.truck);
                    totalAmountCarTruck = totalAmountCarTruck + nowTotalAmountCarTruck;
+
+
+                    // availanlecapacity = ava - nowtotalamountcartruck
+
+
+                //totalamountlane meters 500 = skal minus med nowtotalamountcartruck
+                 //  totalAmountLaneMeters = totalAmountLaneMeters - totalAmountCarTruck;
+                    //Now availible = availibleCapacity - total amountOfcarsTrucks
+
+
+              //  System.out.println("Test:: " + totalAmountLaneMeters);
+                System.out.println("availbleCapacity " + availableCapacity);
+                System.out.println("Total Amount Car Truck " + totalAmountCarTruck);
+                System.out.println("Now avaible " + nowAvailableCapacity);
+
                 //cars += cars;
                 //trucks += trucks;
                 System.out.println("Nuværende total lanemeters for Cars & Trucks: " + totalAmountCarTruck);
