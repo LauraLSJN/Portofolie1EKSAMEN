@@ -10,6 +10,7 @@ public class RoroVessel extends Vessel {
     public int procent;
    //int totalAmountCarTruck;
     int totalAmountCarTruck;
+    int nowTotalAmountCarTruck;
 
 
 
@@ -20,6 +21,8 @@ public class RoroVessel extends Vessel {
         super.width = width;
         this.totalAmountLaneMeters = totalAmountLaneMeters;
         super.procent = procent;
+        //this.car = car;
+       // this.truck = truck;
     }
 
     public int getCar() {
@@ -33,21 +36,36 @@ public class RoroVessel extends Vessel {
 
 
     public void loadingCargo(int cars, int trucks) {
-        this.car = cars;
-        this.truck = trucks;
+        int nowCar = cars;
+        int nowTruck = trucks;
+
+        nowTotalAmountCarTruck = (nowCar*carLength) + (nowTruck * truckLength);
         totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);  
 
        //availablecapacity = hvor mange meter der er tilbage på rorovessel efter bilers og trucks længder.
         int availableCapacity =  totalAmountLaneMeters - totalAmountCarTruck;
+        int nowavailableCapacity =  totalAmountLaneMeters - nowTotalAmountCarTruck;
+
+        System.out.println();
+        //System.out.println("Start amount of lanemeters: " + totalAmountLaneMeters);
+        //System.out.println("Lanemeters start: " + availableCapacity);
+        //System.out.println("Lanemeters tilbage: " + nowavailableCapacity);
+        //System.out.println();
+       // Bliver ikke printet rigtigt ud - Skal tjekkes.
 
 
 
-        if(totalAmountCarTruck < totalAmountLaneMeters){ // hvis der er mere plads efter trucks og cars er sat
-            System.out.println("TOTAL AMOUNT CAR TRUCK lane meters: " + totalAmountCarTruck);
+
+        if((totalAmountCarTruck < totalAmountLaneMeters) && (nowTotalAmountCarTruck < totalAmountLaneMeters)){ // hvis der er mere plads efter trucks og cars er sat
+
             if(totalAmountCarTruck < availableCapacity){ // hvis trucks og bilers længde er mindre end eller lig med at der er mere plads
-                this.car += cars;
-                this.truck += trucks;
-                System.out.println("TOTAL AMOUNT CAR TRUCK: " + totalAmountCarTruck);
+                  this.car += nowCar;
+                  this.truck += nowTruck;
+                System.out.println("Nuværende antal af Cars: " + this.car + ", antal af Trucks: " + this.truck);
+                   totalAmountCarTruck = totalAmountCarTruck + nowTotalAmountCarTruck;
+                //cars += cars;
+                //trucks += trucks;
+                System.out.println("Nuværende total lanemeters for Cars & Trucks: " + totalAmountCarTruck);
             }
 
         }  else {
@@ -90,8 +108,9 @@ public class RoroVessel extends Vessel {
     public int utilityLevelOfCapacity() {
       //  (biler * længde) + (truck * længde)
         //int totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);
+
         procent = totalAmountCarTruck * 100 / totalAmountLaneMeters; //Procent andel som anvedes
-        System.out.println("Andelen af fyldt Lanemeter: " + procent + "%");
+        System.out.println("Andel af lanemeters fyldt: " + procent + "%");
         return procent;
     }
 
