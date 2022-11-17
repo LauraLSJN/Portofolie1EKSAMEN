@@ -16,6 +16,7 @@ public class Main {
 
 
 //Tankers
+        System.out.println();
         System.out.println("Tankers: ");
         Tankers t = new Tankers("DE", 15, 20, 20);
         t.loadingCargo(1, 3);

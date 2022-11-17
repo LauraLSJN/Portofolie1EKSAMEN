@@ -71,7 +71,8 @@ public class RoroVessel extends Vessel {
         }  else {
             System.out.println("Der er ikke plads");
         }
-
+       // System.out.println("Lanemeters tilbage: " + availableCapacity);
+       // System.out.println();
 
 
       /*  if (availableCapacity<totalAmountLaneMeters){
@@ -101,7 +102,7 @@ public class RoroVessel extends Vessel {
 
         //this.car = cars;
         //this.truck = trucks;
-        System.out.println("Antallet af Cars: " + cars + ", Antallet af Trucks: " + trucks);
+     //   System.out.println("Antallet af Cars: " + cars + ", Antallet af Trucks: " + trucks);
     }
 
     @Override
