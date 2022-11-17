@@ -23,14 +23,7 @@ public class Tankers extends Vessel {
     public void loadingCargo(int compartmentsIndeks, int fillCompartment) {
 
 
-/*
-        if (compartments[compartmentsIndeks]> 10) {
-            System.out.println("Tankeren har 1-10 comparments");
-        }else if(compartments[compartmentsIndeks]<1){
-            System.out.println("The tankers have 1-10 comparments");
-        }*/
-
-
+//Hvis mere tid -> smid en try-catch på
        if (compartmentsIndeks > 10) {
             System.out.println("Tankeren har 1-10 comparments");
         }else if(compartmentsIndeks<1){

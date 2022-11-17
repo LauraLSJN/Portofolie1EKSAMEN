@@ -23,7 +23,7 @@ public class Main {
         t.loadingCargo(2, 4);
         t.loadingCargo(2,4);
         t.loadingCargo(3,2);
-        t.loadingCargo(11,2);
+      //  t.loadingCargo(11,2);
       //t.loadingCargo(5, 11);
         //t.loadingCargo(11, 4);
         System.out.println();
