@@ -11,6 +11,8 @@ public class RoroVessel extends Vessel {
    //int totalAmountCarTruck;
     int totalAmountCarTruck;
     int nowTotalAmountCarTruck;
+    int ledigKapacitet;
+    int carTruckTotalLaneMeters;
 
 
 
@@ -34,7 +36,34 @@ public class RoroVessel extends Vessel {
 
 
     public void loadingCargo(int cars, int trucks) {
-        int nowCar = cars;
+        int newLoadCar = cars;
+        int newLoadTruck = trucks;
+        ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters;
+        if(ledigKapacitet >= 0 && totalAmountLaneMeters > carTruckTotalLaneMeters){
+            car +=newLoadCar;
+            truck += newLoadTruck;
+            System.out.println("Car: " + car + " Truck: " + truck);
+            carTruckTotalLaneMeters = (car*carLength) + (truck*truckLength);
+
+        }else{
+            System.out.println("Der er ikke plads");
+        }
+
+        System.out.println("LedigKapacitet: " + ledigKapacitet);
+        System.out.println("carTruckTotalLaneMeters: " + carTruckTotalLaneMeters);
+
+
+
+
+
+
+
+
+
+
+
+
+        /*int nowCar = cars;
         int nowTruck = trucks;
 
         nowTotalAmountCarTruck = (nowCar*carLength) + (nowTruck * truckLength);
@@ -91,7 +120,11 @@ public class RoroVessel extends Vessel {
 
         }  else {
             System.out.println("Der er ikke plads");
-        }
+        }*/
+
+
+
+
        // System.out.println("Lanemeters tilbage: " + availableCapacity);
        // System.out.println();
 
@@ -131,7 +164,7 @@ public class RoroVessel extends Vessel {
       //  (biler * længde) + (truck * længde)
         //int totalAmountCarTruck = (getCar()*carLength) + (getTruck() * truckLength);
 
-        procent = totalAmountCarTruck * 100 / totalAmountLaneMeters; //Procent andel som anvedes
+        procent = carTruckTotalLaneMeters * 100 / totalAmountLaneMeters; //Procent andel som anvedes
         System.out.println("Andel af lanemeters fyldt: " + procent + "%");
         return procent;
     }
