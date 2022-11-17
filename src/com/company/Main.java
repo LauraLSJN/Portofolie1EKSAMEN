@@ -36,8 +36,9 @@ public class Main {
         RoroVessel r = new RoroVessel("DK",10,10,10,500);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
+        r.loadingCargo(2,2);
         r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
+        r.loadingCargo(2,2);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);

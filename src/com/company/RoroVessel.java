@@ -56,15 +56,19 @@ public class RoroVessel extends Vessel {
 
         if((totalAmountCarTruck < totalAmountLaneMeters) && (nowTotalAmountCarTruck < totalAmountLaneMeters)){ // hvis der er mere plads efter trucks og cars er sat
         //nowTotalAmountCarTruck
-        int nowAvailableCapacity = availableCapacity- nowTotalAmountCarTruck;
+       // int nowAvailableCapacity = availableCapacity- nowTotalAmountCarTruck;//
+          //  if((totalAmountCarTruck <= availableCapacity) && (totalAmountCarTruck <= nowAvailableCapacity))
 
-            if((totalAmountCarTruck <= availableCapacity) && (totalAmountCarTruck <= nowAvailableCapacity)){ // hvis trucks og bilers længde er mindre end eller lig med at der er mere plads
+            if(totalAmountCarTruck <= availableCapacity){ // hvis trucks og bilers længde er mindre end eller lig med at der er mere plads
                   this.car += nowCar;
                   this.truck += nowTruck;
                 System.out.println("Nuværende antal af Cars: " + this.car + ", antal af Trucks: " + this.truck);
                    totalAmountCarTruck = totalAmountCarTruck + nowTotalAmountCarTruck;
 
 
+                  //  nowAvailableCapacity = nowAvailableCapacity - totalAmountCarTruck;
+
+                    // 500 - totalamountcartruck  = resterende
                     // availanlecapacity = ava - nowtotalamountcartruck
 
 
@@ -72,15 +76,17 @@ public class RoroVessel extends Vessel {
                  //  totalAmountLaneMeters = totalAmountLaneMeters - totalAmountCarTruck;
                     //Now availible = availibleCapacity - total amountOfcarsTrucks
 
+               System.out.println("Total amount lane meters: " + totalAmountLaneMeters);
+              //  System.out.println("availbleCapacity " + availableCapacity);
+                System.out.println("Total Amount Car Truck: " + totalAmountCarTruck);
+                //System.out.println("Total availble: " + nowAvailableCapacity);
+                System.out.println("Now Amount Car Truck : " + nowTotalAmountCarTruck );
+                System.out.println("Availbe capacity LEFT: " + availableCapacity);
+              //  System.out.println("Now availbe: "  + nowAvailableCapacity);
 
-              //  System.out.println("Test:: " + totalAmountLaneMeters);
-                System.out.println("availbleCapacity " + availableCapacity);
-                System.out.println("Total Amount Car Truck " + totalAmountCarTruck);
-                System.out.println("Now avaible " + nowAvailableCapacity);
+                //System.out.println("Nuværende total lanemeters for Cars & Trucks: " + totalAmountCarTruck);
 
-                //cars += cars;
-                //trucks += trucks;
-                System.out.println("Nuværende total lanemeters for Cars & Trucks: " + totalAmountCarTruck);
+
             }
 
         }  else {
