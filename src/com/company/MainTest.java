@@ -9,36 +9,66 @@ public class MainTest {
 
     }
 
-    //Tester LoadingCargo()
+    //Tankers
+    //Tester hvis der ikke er nogle compartments, burde utility være 100%
     @Test
     void compartmentsTankerEmpty() {
         Tankers tanker = new Tankers("DE", 15, 20, 20);
         assertEquals(100, tanker.utilityLevelOfCapacity());
     }
 
+    //Tester hvis halvdelen er fyldt, skal procent være 50%
     @Test
-    void ContainerVesselEmpty(){
-        containerVessel c = new containerVessel("DK",10,20);
+    void compartmentsTankerFifty() {
+        Tankers tanker = new Tankers("DE", 15, 20, 20);
+        tanker.loadingCargo(0, 1);
+        assertEquals(90, tanker.utilityLevelOfCapacity());
 
-        c.loadingCargo(0);
-        c.utilityLevelOfCapacity();
+
+    }
+
+    //Tester hvis Tankers compartments er fyldt op (alle 10 index) skal procent være 0%.
+    @Test
+    void compartmentsTankerMax() {
+        Tankers tanker = new Tankers("DE", 15, 20, 20);
+        tanker.loadingCargo(0, 1);
+        tanker.loadingCargo(1, 1);
+        tanker.loadingCargo(2, 1);
+        tanker.loadingCargo(3, 1);
+        tanker.loadingCargo(4, 1);
+        tanker.loadingCargo(5, 1);
+        tanker.loadingCargo(6, 1);
+        tanker.loadingCargo(7, 1);
+        tanker.loadingCargo(8, 1);
+        tanker.loadingCargo(9, 1);
+        assertEquals(0, tanker.utilityLevelOfCapacity());
+    }
+
+
+
+    //Vessel
+    //Tester hvis der ikke er cargo på Vessel, burde utilitylevel være 0%
+    @Test
+    void containerVesselEmpty(){
+        containerVessel c = new containerVessel("DK",10,20);
         assertEquals(0,c.utilityLevelOfCapacity());
     }
+
+    //Tester hvis Vessel er fyldt op med 5 ud af max som er 10, skal utility level være på 50%.
     @Test
     void containerVesselFifty(){
         containerVessel c = new containerVessel("DK",10,20);
-        c.loadingCargo(5);
-        c.utilityLevelOfCapacity();
+        c.loadingCargo(50);
         assertEquals(50,c.utilityLevelOfCapacity());
     }
 
 
-
+    //Tester hvis Vessel er fyldt helt op med 10, skal utilitylevel være 100%.
     @Test
     void containerVesselMax(){
         containerVessel c = new containerVessel("DK",10,20);
-        c.loadingCargo(10);
-        c.utilityLevelOfCapacity();
+        c.loadingCargo(5);
+        c.loadingCargo(5);
         assertEquals(100,c.utilityLevelOfCapacity());
     }
 

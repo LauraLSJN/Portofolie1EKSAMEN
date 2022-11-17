@@ -21,8 +21,6 @@ public class RoroVessel extends Vessel {
         super.width = width;
         this.totalAmountLaneMeters = totalAmountLaneMeters;
         super.procent = procent;
-        //this.car = car;
-       // this.truck = truck;
     }
 
     public int getCar() {

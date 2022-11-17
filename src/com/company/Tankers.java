@@ -31,12 +31,6 @@ public class Tankers extends Vessel {
         }
 
 
-        /*compartments[compartmentsIndeks] += volumneLevel;
-        System.out.println(" Compartments: ");
-        for (int com : compartments) {
-            System.out.print(com);
-        }*/
-
         if(compartments[compartmentsIndeks] == 0){ //Fylder kun på, hvis værdien ved indeks x er 0
             //Plusser ikke op i antal, der allerede er lagt i. Vi kan derved ikke fylde 2+4 i samme indeks (compartment)
            if (fillCompartment <= maxCompartmentCapacity){
@@ -53,8 +47,6 @@ public class Tankers extends Vessel {
         }else{
             System.out.println("Der er allerede en på pladsen");
         }
-
-
     }
 
     @Override
