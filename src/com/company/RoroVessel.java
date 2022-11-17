@@ -45,7 +45,9 @@ public class RoroVessel extends Vessel {
 
        //availablecapacity = hvor mange meter der er tilbage på rorovessel efter bilers og trucks længder.
         int availableCapacity =  totalAmountLaneMeters - totalAmountCarTruck;
-        int nowavailableCapacity =  totalAmountLaneMeters - nowTotalAmountCarTruck;
+        //int availableCapacity =  availableCapacityStart - nowTotalAmountCarTruck;
+
+
 
         System.out.println();
         //System.out.println("Start amount of lanemeters: " + totalAmountLaneMeters);
@@ -53,9 +55,6 @@ public class RoroVessel extends Vessel {
         //System.out.println("Lanemeters tilbage: " + nowavailableCapacity);
         //System.out.println();
        // Bliver ikke printet rigtigt ud - Skal tjekkes.
-
-
-
 
         if((totalAmountCarTruck < totalAmountLaneMeters) && (nowTotalAmountCarTruck < totalAmountLaneMeters)){ // hvis der er mere plads efter trucks og cars er sat
         //nowTotalAmountCarTruck
