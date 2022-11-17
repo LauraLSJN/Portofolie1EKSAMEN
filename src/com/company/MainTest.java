@@ -69,6 +69,15 @@ public class MainTest {
         assertEquals(9,c.getNowContainer());
     }
 
+    //skriv med 0 cargo -> 1 cargo og mange cargo
+    // ingen grund til 2 eller 3 -> forventes de bliver behandlet ens.
+    //1 og 2 er ikke det samme -> kan være en liste overskriver gammel fejl
+    // 2 typer test:
+    // bound value test -> kan man fylde max op, tester grænderne hvis max er 10, hvordan er 9 eller 10 så?
+    // ECP test  -> opfører sig ens i forskellige situationer
+    // ECP -> 0,1 og mange
+    //
+
     @Test
     void testLoadingCargoRORO(){
         RoroVessel RR = new RoroVessel("DK",10,10,10,300);
