@@ -44,7 +44,8 @@ public class Tankers extends Vessel {
             System.out.print(com);
         }*/
 
-        if(compartments[compartmentsIndeks] == 0){
+        if(compartments[compartmentsIndeks] == 0){ //Fylder kun på, hvis værdien ved indeks x er 0
+            //Plusser ikke op i antal, der allerede er lagt i. Vi kan derved ikke fylde 2+4 i samme indeks (compartment)
            if (fillCompartment <= maxCompartmentCapacity){
                 compartments[compartmentsIndeks] += fillCompartment;
                 System.out.print(" Compartments: ");
@@ -53,7 +54,7 @@ public class Tankers extends Vessel {
 
                 }
             } else {
-               System.out.println("fillCompartment er for meget ift. maxCompartmentCapacity");
+               System.out.println("Du overskrider max level for compartment");
            }
             System.out.println();
         }else{
