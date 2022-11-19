@@ -23,7 +23,6 @@ public class containerVessel extends Vessel {
         return nowContainer;
     }
 
-
     public void loadingCargo(int numberOfContainers) {
         availableCapacity = maxContainer - nowContainer;
         if (nowContainer < maxContainer) {
@@ -45,7 +44,7 @@ public class containerVessel extends Vessel {
 
     @Override
     public int utilityLevelOfCapacity() {
-        nowContainer = getNowContainer();
+        //nowContainer = getNowContainer();
         procent = nowContainer * 100 / maxContainer;
         System.out.println("Andelen af ContainerVessel der er fyldt: " + procent + "%");
         return procent;

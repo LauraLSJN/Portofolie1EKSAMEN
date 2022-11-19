@@ -21,13 +21,11 @@ public class Tankers extends Vessel {
     }
 
     public void loadingCargo(int compartmentsIndeks, int fillCompartment) {
-
-
 //Hvis mere tid -> smid en try-catch på
-       if (compartmentsIndeks > 10) {
+       if (compartmentsIndeks > 9) {
             System.out.println("Tankeren har 1-10 comparments");
-        }else if(compartmentsIndeks<1){
-                System.out.println("The tankers have 1-10 comparments");
+        }else if(compartmentsIndeks<0){
+           System.out.println("The tankers have 1-10 comparments");
         }
 
 
@@ -38,7 +36,6 @@ public class Tankers extends Vessel {
                 System.out.print(" Compartments: ");
                 for (int com : compartments) {
                     System.out.print(com);
-
                 }
             } else {
                System.out.println("Du overskrider max level for compartment");
