@@ -18,7 +18,7 @@ public class MainTest {
 
     //Tester hvis halvdelen er fyldt, skal procent være 50%
     @Test
-    void compartmentsTankerFifty() {
+    void compartmentsTanker90() {
         Tankers tanker = new Tankers("DE", 15, 20, 20);
         tanker.loadingCargo(0, 1);
         assertEquals(90, tanker.utilityLevelOfCapacity());
