@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Tankers extends Vessel {
@@ -58,4 +59,31 @@ public class Tankers extends Vessel {
         System.out.println("Andel af tomme copartments: " + procent + "%");
         return procent;
     }
+
+    //Part5: Dummy metoder
+    public void findPositionTanker(){
+        String position;
+
+    }
+
+    public void findFutureDestinationTanker(){
+        ArrayList<String> futureDestinations;
+
+    }
+    public void searchAvailabeTanker(){
+        ArrayList<String> availableTankers;
+
+    }
+
+    public void checkTankerCapacity(){
+        int capacity;
+
+    }
+
+    public void addTransportation(){
+
+    }
+
 }
+
+

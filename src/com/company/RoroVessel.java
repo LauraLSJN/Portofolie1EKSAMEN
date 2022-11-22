@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class RoroVessel extends Vessel {
 
     private int totalAmountLaneMeters;

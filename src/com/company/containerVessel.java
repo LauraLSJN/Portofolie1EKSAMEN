@@ -42,7 +42,6 @@ public class containerVessel extends Vessel {
 
     }
 
-
     @Override
     public int utilityLevelOfCapacity() {
         procent = nowContainer * 100 / maxContainer;
