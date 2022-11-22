@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MainTest {
     @Test
     void mainTest(){
-
     }
 
     //Tankers
@@ -95,82 +94,80 @@ public class MainTest {
     //Tester hvis cars er sat til 3 og trucks er sat til 9, skal andelen af lanemeters være fyldt med 98%
     @Test
     void RoroVesselMax(){
-        RoroVessel r = new RoroVessel("DK",10,10,10,300);
+        RoroVessel r = new RoroVessel("DK",10,10,10,500);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
-        r.loadingCargo(0,1);
-        r.loadingCargo(1,0);
+        r.loadingCargo(2,2);
+        r.loadingCargo(1,1);
+        r.loadingCargo(2,2);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
         r.loadingCargo(1,1);
-        //r.loadingCargo(1,1);
-        //r.loadingCargo(1,1);
-        //r.loadingCargo(2,3);
-
-       // r.utilityLevelOfCapacity();
-        assertEquals(53,r.utilityLevelOfCapacity());
-
+        r.loadingCargo(1,1);
+        r.loadingCargo(1,1);
+        assertEquals(98,r.utilityLevelOfCapacity());
     }
-    //skriv med 0 cargo -> 1 cargo og mange cargo
-    // ingen grund til 2 eller 3 -> forventes de bliver behandlet ens.
-    //1 og 2 er ikke det samme -> kan være en liste overskriver gammel fejl
-    // 2 typer test:
-    // bound value test -> kan man fylde max op, tester grænderne hvis max er 10, hvordan er 9 eller 10 så?
-    // ECP test  -> opfører sig ens i forskellige situationer
-    // ECP -> 0,1 og mange
-    //
 
+
+    //Part 5: Dummy test
+   //Tester hvis metoden forventer 0
     @Test
-    void testLoadingCargoRORO(){
-        RoroVessel RR = new RoroVessel("DK",10,10,10,300);
-        RR.loadingCargo(3,6);
-        assertEquals(6,RR.getTruck());
-        assertEquals(3,RR.getCar());
+    void checkContainerVesselCapacityZero(){
+        containerVessel c = new containerVessel("DK" , 10 ,10);
+        assertEquals(0,c.checkContainerVesselCapacity());
+    }
+
+    //Tester hvis metoden forventer 1 - fejler da dummy metoden returnerer 0
+    @Test
+    void checkContainerVesselCapacityOne(){
+        containerVessel c = new containerVessel("DK" , 10 ,10);
+        c.checkContainerVesselCapacity();
+        assertEquals(1,c.checkContainerVesselCapacity());
     }
 
 
 
-    //Tester utilityLevelOfCapacity()
+    //Tester hvis metoden regner med at der er ingen ting i
     @Test
-    void testUtilityCV(){
-        containerVessel c = new containerVessel("DK",10,20);
-        c.loadingCargo(5);
-        c.utilityLevelOfCapacity();
-        assertEquals(50,c.procent);
+    void findPositionContainerVesselZero(){
+        containerVessel c = new containerVessel("DK",10,10);
+        assertEquals("",c.findPositionContainerVessel(""));
+    }
+
+    //Metoden fejler, da Mombasa ikke kan findes
+    @Test
+    void findPositionContainerVesselOne(){
+        containerVessel c = new containerVessel("DK",10,10);
+        c.findPositionContainerVessel("Mombasa");
+        assertEquals("Mombasa",c.findPositionContainerVessel("Mombasa"));
     }
 
     @Test
-    void testUtilityCTankers(){
-        Tankers t = new Tankers("DE", 15, 20, 20);
-        t.loadingCargo(1, 1);
-        t.utilityLevelOfCapacity();
-        assertEquals(90,t.procent);
+    void findFutureDestinationsContainerVesselZero(){
+        containerVessel c = new containerVessel("DK",10,10);
+        assertEquals("", c.findFutureDestinationContainerVessel());
     }
 
     @Test
-    void testUtilityRORO(){
-        RoroVessel RORO = new RoroVessel("DK",10,10,10,300);
-        RORO.loadingCargo(1,1);
-        RORO.utilityLevelOfCapacity();
-        assertEquals(12,RORO.procent);
-
-    }
-
-    //Tester at længden på Array er som forventet (Klassen)
-    @Test
-    void testGetCompartmentsTankers(){
-        Tankers t = new Tankers("DE", 15, 20, 20);
-        assertEquals(10,t.getCompartments().length);
+    void findFutureDestinationsContainerVesselOne() {
+        containerVessel c = new containerVessel("DK", 10, 10);
+        c.findFutureDestinationContainerVessel();
+        assertEquals("", c.findFutureDestinationContainerVessel());
     }
 
 
-    //Måske ikke behov for
     @Test
-    void testLoadingCargoCV(){
-        containerVessel c = new containerVessel("DK",10,20);
-        c.loadingCargo(9);
-        assertEquals(9,c.getNowContainer());
+    void searchAvailbeContainerVesselZero(){
+        containerVessel c = new containerVessel("DK", 10, 10);
+        assertEquals("", c.searchAvailbeContainerVessel(""));
+    }
+
+    @Test
+    void searchAvailbeContainerVesselOne(){
+        containerVessel c = new containerVessel("DK", 10, 10);
+        c.searchAvailbeContainerVessel("Mombasa");
+        assertEquals("Mombasa", c.searchAvailbeContainerVessel("Mombasa"));
     }
 
 }

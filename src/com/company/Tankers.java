@@ -16,12 +16,11 @@ public class Tankers extends Vessel {
     }
 
     public int[] getCompartments() {
-        System.out.println(Arrays.toString(compartments)); //Kan være nyttigt, hvis arrayet skal printes til terminalen
+        System.out.println(Arrays.toString(compartments)); //Nyttigt, hvis arrayet skal printes til terminalen
         return compartments; //GetCompartments, da vi skal teste det
     }
 
     public void loadingCargo(int compartmentsIndeks, int fillCompartment) {
-//Hvis mere tid -> smid en try-catch på
        if (compartmentsIndeks > 9) {
             System.out.println("Tankeren har 1-10 comparments");
         }else if(compartmentsIndeks<0){

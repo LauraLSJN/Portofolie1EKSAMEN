@@ -9,8 +9,6 @@ public class Main {
         System.out.println("ContainerVessel:");
         containerVessel c = new containerVessel("DK",10,20);
         c.loadingCargo(4);
-        //c.loadingCargo(3);
-        //c.loadingCargo(3);
         System.out.println("Antal containers i ContainerVessel: " + c.getNowContainer());
         c.utilityLevelOfCapacity();
 
@@ -22,9 +20,6 @@ public class Main {
         t.loadingCargo(1, 3);
         t.loadingCargo(2, 4);
         t.loadingCargo(3,2);
-      //  t.loadingCargo(11,2);
-      //t.loadingCargo(5, 11);
-        //t.loadingCargo(11, 4);
         System.out.println();
         t.utilityLevelOfCapacity();
 
@@ -34,20 +29,13 @@ public class Main {
         System.out.println(" RoroVessel:");
         RoroVessel r = new RoroVessel("DK",10,10,10,500);
         r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-        r.loadingCargo(2,2);
-        r.loadingCargo(1,1);
-        r.loadingCargo(2,2);
-        r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-        r.loadingCargo(1,1);
-       // r.loadingCargo(0,0);
-        //r.loadingCargo(3,3);
-
-        //r.loadingCargo(2,2);
+        r.loadingCargo(2,1);
+        r.loadingCargo(3,1);
+        r.loadingCargo(3,1);
+        r.loadingCargo(3,1);
+        r.loadingCargo(3,1);
+        r.loadingCargo(3,1);
+        r.loadingCargo(3,1);
         r.utilityLevelOfCapacity();
 
     }

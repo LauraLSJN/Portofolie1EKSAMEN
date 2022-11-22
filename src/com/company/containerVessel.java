@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class containerVessel extends Vessel {
     private int nowContainer;
     private int maxContainer;
@@ -14,7 +16,6 @@ public class containerVessel extends Vessel {
         super.width = width; //Fra Vessel (super klassen
         super.procent = procent;
         this.maxContainer = 10; // Specifik nummer til maxContainer
-        //this.nowContainer = 0;
         this.firstContainer = 0;
     }
 
@@ -44,11 +45,35 @@ public class containerVessel extends Vessel {
 
     @Override
     public int utilityLevelOfCapacity() {
-        //nowContainer = getNowContainer();
         procent = nowContainer * 100 / maxContainer;
         System.out.println("Andelen af ContainerVessel der er fyldt: " + procent + "%");
         return procent;
     }
 
+    //Part5: Dummy metoder
+    public String findPositionContainerVessel(String vesselName){
+        String position = "";
+        return position;
+
+    }
+
+    public ArrayList<String> findFutureDestinationContainerVessel(){
+        ArrayList<String> futureDestinations = new ArrayList<String>();
+        return futureDestinations;
+
+    }
+    public ArrayList<String> searchAvailbeContainerVessel(String vesselName){
+        ArrayList<String> availableContainerVessel = new ArrayList<String>();
+        return availableContainerVessel;
+    }
+
+    public int checkContainerVesselCapacity(){
+        int capacity = 0;
+        return capacity;
+    }
+
+    public void addTransportation(){
+
+    }
 
 }
