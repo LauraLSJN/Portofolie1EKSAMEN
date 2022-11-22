@@ -22,8 +22,6 @@ public class MainTest {
         Tankers tanker = new Tankers("DE", 15, 20, 20);
         tanker.loadingCargo(0, 1);
         assertEquals(90, tanker.utilityLevelOfCapacity());
-
-
     }
 
     //Tester hvis Tankers compartments er fyldt op (alle 10 index) skal procent være 0%.
@@ -44,7 +42,6 @@ public class MainTest {
     }
 
 
-
     //Vessel
     //Tester hvis der ikke er cargo på Vessel, burde utilitylevel være 0%
     @Test
@@ -61,7 +58,6 @@ public class MainTest {
         assertEquals(50,c.utilityLevelOfCapacity());
     }
 
-
     //Tester hvis Vessel er fyldt helt op med 10, skal utilitylevel være 100%.
     @Test
     void containerVesselMax(){
@@ -72,16 +68,13 @@ public class MainTest {
     }
 
 
-
     //Roro
     //Tester hvis roroVessel ikke har cars og trucks, er andelen af lanemeters fyldt: 0%
     @Test
     void RoroVesselEmpty(){
         RoroVessel r = new RoroVessel("DK",10,10,10,300);
         assertEquals(0,0);
-
     }
-
 
     //Tester hvis cars er sat til 10 og trucks er sat til 3, skal andel af lanemeters være fyldt med 56%
     @Test
