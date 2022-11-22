@@ -16,7 +16,7 @@ public class MainTest {
         assertEquals(100, tanker.utilityLevelOfCapacity());
     }
 
-    //Tester hvis vi kalder loadingCargo() 1 gang, forventes 90% tommer compartments
+    //Tester hvis loadingCargo bliver kaldt én gang, skal procent ledigt være 90.
     @Test
     void compartmentsTanker90() {
         Tankers tanker = new Tankers("DE", 15, 20, 20);
