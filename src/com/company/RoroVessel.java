@@ -9,7 +9,7 @@ public class RoroVessel extends Vessel {
     private int truck;
     private int carLength = 8;
     private int truckLength = 30;
-    public int procent;
+    //public int procent; //Kan slettes, da vi henter fra superklassen
     int ledigKapacitet;
     int carTruckTotalLaneMeters;
 
@@ -18,8 +18,8 @@ public class RoroVessel extends Vessel {
         super.aDraft = aDraft;
         super.length = length;
         super.width = width;
-        this.totalAmountLaneMeters = totalAmountLaneMeters;
-        super.procent = procent;
+        this.totalAmountLaneMeters = totalAmountLaneMeters; //totalAmountLaneMeters indgår i ovenstående parameter, da der ikke er givet specifik længde i opgavebeskrivelsen. Skibene kan have forskellige længder, skal derfor sættes
+        //super.procent = procent; //Kan slettes, da vi henter fra superklassen
     }
 
 
@@ -28,17 +28,19 @@ public class RoroVessel extends Vessel {
         int newLoadTruck = trucks;
         int newLoadLaneMeters = (newLoadCar * carLength) + (newLoadTruck * truckLength); //TotalLaneMeters der ønskes at tilføjes
         carTruckTotalLaneMeters = (car * carLength) + (truck * truckLength); //TotalLaneMeters for alle car og truck tilføjet
-        ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters; //LedigKapacitet tilbage
+        ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters; //LedigKapacitet tilbage - totalAmountLaneMeters -> Angivet i konstruktøren
 
-        if (ledigKapacitet >= 0 && totalAmountLaneMeters > carTruckTotalLaneMeters) {
-            if (newLoadLaneMeters < ledigKapacitet) { //Den ønskede værdi der skal tilføjes skal være mindre end ledig kapacitet
-                car += newLoadCar; //tilføjer newLoadCar til variablen car
-                truck += newLoadTruck; //tilføjer newLoadTruck til variablen truck
+        if (ledigKapacitet >= 0 && totalAmountLaneMeters > carTruckTotalLaneMeters) { //Hvis der er en ledig kapacitet og totalAmountLanemeters (i konstruktøren) er større end allerede fyldte totalAmountLanemeters
+            //ledigKapacitet >= 0 kan slettes
+            if (newLoadLaneMeters < ledigKapacitet) { //Det ønskede antal cars og trucks der skal tilføjes skal være mindre end ledig kapacitet
+                //Ovenstående if-statement kunn være blevet lagt sammen; totalAmountLaneMeters > carTruckTotalLanemeters && newLoadLanemeters < ledigKapacitet
+                car += newLoadCar; //tilføjer newLoadCar til variabel car
+                truck += newLoadTruck; //tilføjer newLoadTruck til variabel truck
                 System.out.println("Car: " + car + " Truck: " + truck);
                 System.out.println("newLoadLaneMeters: " + newLoadLaneMeters);
                 System.out.println("carTruckTotalLaneMeters: " + carTruckTotalLaneMeters);
-                carTruckTotalLaneMeters = (car * carLength) + (truck * truckLength); //Opdaterer carTruckTotalLaneMeters
-                ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters; //Opdaterer ledigKapacitet
+                //carTruckTotalLaneMeters = (car * carLength) + (truck * truckLength); //Opdaterer carTruckTotalLaneMeters - Kan SLETTES, vi havde den fordi vi oplevede at det ikke virkede
+               //ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters; //Opdaterer ledigKapacitet -  Kan SLETTES, oplevede at det nogle gange ikke virkede
                 System.out.println("LedigKapacitet: " + ledigKapacitet);
 
                 System.out.println();

@@ -38,6 +38,7 @@ public class Main {
         r.loadingCargo(3,1);
         r.loadingCargo(3,1);
         r.loadingCargo(3,1);
+       // r.loadingCargo(5,5);
         r.utilityLevelOfCapacity();
 
     }

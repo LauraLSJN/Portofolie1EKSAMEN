@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class MainTest {
-    @Test
+    /*@Test
     void mainTest(){
-    }
+    }*/
 
     //Tankers
     //Tester hvis der ikke er nogle compartments, burde utility være 100%
