@@ -23,9 +23,9 @@ public class RoroVessel extends Vessel {
     }
 
 
-    public void loadingCargo(int cars, int trucks) {
-        int newLoadCar = cars;
-        int newLoadTruck = trucks;
+    public void loadingCargo(int cars, int trucks) { //cars og trucks kan ændres til eks. newLoadCar og newLoadTrucks -> Da disse anvendes i nedenstående beregninger
+       int newLoadCar = cars; //Redundant -> Da vi ligger cars og trucks i nye variabler -> Argumenterne i parametren, er i sig selv en variabel
+       int newLoadTruck = trucks; //Redundant -> Da vi ligger cars og trucks i nye variabler -> Argumenterne i parametren, er i sig selv en variabel
         int newLoadLaneMeters = (newLoadCar * carLength) + (newLoadTruck * truckLength); //TotalLaneMeters der ønskes at tilføjes
         carTruckTotalLaneMeters = (car * carLength) + (truck * truckLength); //TotalLaneMeters for alle car og truck tilføjet
         ledigKapacitet = totalAmountLaneMeters - carTruckTotalLaneMeters; //LedigKapacitet tilbage - totalAmountLaneMeters -> Angivet i konstruktøren
