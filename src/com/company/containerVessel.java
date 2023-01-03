@@ -13,6 +13,7 @@ public class containerVessel extends Vessel {
         super.flagNation = flagNation; //Fra Vessel (super klassen)
         super.length = length; //Fra Vessel (super klassen)
         super.width = width; //Fra Vessel (super klassen
+        //Teoretisk er det ikke muligt at tilgå procent fra superclassen uden super() eller keyword super, dette er dog muligt i IntelliJ
         //super.procent = procent;
         this.maxContainer = 10; // Specifik nummer til maxContainer
         //this.firstContainer = 0; //Anvendes ikke
@@ -26,7 +27,8 @@ public class containerVessel extends Vessel {
     public void loadingCargo(int numberOfContainers) { //Void da det ikke skal returnere en værdi
         availableCapacity = maxContainer - nowContainer; //Finder kapaciteten -> Eksisterende plads til at fylde containers i
         //Nested if-else
-        if (nowContainer < maxContainer) { //Er der overhovedet plads
+        if (nowContainer < maxContainer) { //Er der overhovedet plads - nowContainer mindre end maxContainer
+            //numberOfContainers mindre end eller lig availabaleCpacity
             if (numberOfContainers <= availableCapacity) { //Tjekker om det antal containers man ønsker at fylde er mindre end eller lig ledig kapacitet -> Er der overhovedet plads
                 nowContainer += numberOfContainers; //Hvis der er plads -> tilføjes antal ønsket containers, til det nuværende/eksisterende antal containers
             } else {

@@ -23,6 +23,7 @@ public class Tankers extends Vessel {
 
     public void loadingCargo(int compartmentsIndeks, int fillCompartment) { //Indeks repræsentere hver compartment
         //Tjekker om compartMentsIndeks i parameter, er indenfor array
+        //Hvis loadingCargo skulle være med i superklassen, kunne vi undlade compartmentsIndeks og anvendt en sorterings algoritme, som fylder på næste ledige compartment
        if (compartmentsIndeks > 9) { //9, da array starter på indeks 0
             System.out.println("Tankeren har 1-10 comparments");
         }else if(compartmentsIndeks<0){
@@ -32,7 +33,7 @@ public class Tankers extends Vessel {
 
         if(compartments[compartmentsIndeks] == 0){ //Fylder kun på, hvis værdien ved indeks x er 0. Værdien i array er ved default 0, hvilket repræsentere at compartment er "tom", der er altså ikke fyldt noget på
             //Plusser ikke op i antal pr. compartment, der allerede er lagt i. Vi kan derved ikke fylde 2+4 i samme indeks (compartment)
-           if (fillCompartment <= maxCompartmentCapacity){ //Hvis fillCompartment (det der skal fyldes i) er mindre end eller lig med maxCompartmentCapacity
+            if (fillCompartment <= maxCompartmentCapacity){ //Hvis fillCompartment (det der skal fyldes i) er mindre end eller lig med maxCompartmentCapacity
                 compartments[compartmentsIndeks] += fillCompartment;
                 System.out.print(" Compartments: ");
                 for (int com : compartments) { //Foreach der printer arrayet
